@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Wedding Package",
+        "price": "300",
+        "description": "Wedding photography is a specialty in photography that is primarily focused on the photography of events and activities relating to weddings.",
+        "img": "https://littlesisterthemovie.com/wp-content/uploads/2021/12/69.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Family Package",
+        "price": "100",
+        "description": "Family photographer Zurich is someone who will freeze the moments of a special period in your life forever. If you're worried about posing and looking stiff on your photos, I've got you covered!.",
+        "img": "https://www.peerspace.com/resources/wp-content/uploads/best-nyc-family-photographers.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Student Package",
+        "price": "150",
+        "description": "In photographic practice, visual storytelling is often called a 'photo essay' or 'photo story'. It's a way for a photographer to narrate a story with a series of photographs",
+        "img": "https://images.squarespace-cdn.com/content/v1/5475f6eae4b0821160f6ac3e/1558022141168-VYMBAQEX6AFTVOR2WNM3/bigstock-three-graduate-students-tossin-18988985.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Corporate Event",
+        "price": "180",
+        "description": "Corporate event photography is a very specific niche of photography. Which has a lot of work opportunities for beginners and advanced photographers? ",
+        "img": "https://www.fredericpaulussen.be/wp-content/uploads/2020/05/photography-prices-for-events.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Product Photography",
+        "price": "100",
+        "description": "Introduction to How to Start a Product Photography Business, Plan, and Ideas : The key to successful marketing is good product.",
+        "img": "https://www.idea2makemoney.com/wp-content/uploads/2021/10/3-4.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Modeling Photography",
+        "price": "300",
+        "description": "Depending on the commercial needs there are different types of professional models . There is also a relation between different faces, shapes, shapes, ages, etc.",
+        "img": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d3699a63977617.5ac34a76b4cce.jpg"
+    }
+]
