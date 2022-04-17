@@ -5,7 +5,7 @@ import logo from '../../../images/onestudiologo.png'
 
 const Header = () => {
     return (
-        <div>
+        <>
             <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand as={Link} to='/'><img height={40} src={logo} alt="" /></Navbar.Brand>
@@ -30,7 +30,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </>
     );
 };
 
