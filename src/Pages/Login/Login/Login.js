@@ -66,6 +66,8 @@ const Login = () => {
                 </Form>
                 {errorElement}
                 <p className='mt-3'>New to One studio? <span className='text-danger' style={{ cursor: "pointer" }} onClick={navigateRegister}>Register</span> </p>
+
+                <p className='mt-3'>Forget Password? <span className='text-danger' style={{ cursor: "pointer" }} onClick={navigateRegister}>Reset</span> </p>
             </div>
 
             <div>
