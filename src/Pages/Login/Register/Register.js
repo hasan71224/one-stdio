@@ -5,6 +5,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
@@ -17,6 +18,10 @@ const Register = () => {
       const [updateProfile, updating, updateError] = useUpdateProfile(auth);
       
     const navigate = useNavigate()
+
+    if (loading) {
+        return <Loading></Loading>;
+    }
 
     if(user){
         console.log(user);

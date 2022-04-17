@@ -1,9 +1,14 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, sendPasswordResetEmail, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 const Login = () => {
@@ -19,6 +24,8 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     if (user) {
         navigate(from, { replace: true })
@@ -38,10 +45,24 @@ const Login = () => {
             </div>
 
     }
+    if (loading) {
+        return <Loading></Loading>;
+    }
 
     const navigateRegister = event => {
         navigate('/register')
     }
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Send Email');
+        }
+        else {
+            toast("Please Enter Your Email")
+        }
+    }
+
     return (
         <div>
             <div className='w-25 mx-auto border border-1 rounded-3 p-3 mt-5 shadow p-3 mb-5 bg-body rounded'>
@@ -67,12 +88,14 @@ const Login = () => {
                 {errorElement}
                 <p className='mt-3'>New to One studio? <span className='text-danger' style={{ cursor: "pointer" }} onClick={navigateRegister}>Register</span> </p>
 
-                <p className='mt-3'>Forget Password? <span className='text-danger' style={{ cursor: "pointer" }} onClick={navigateRegister}>Reset</span> </p>
+                <p className='mt-3'>Forget Password? <span className='text-danger' style={{ cursor: "pointer" }} onClick={resetPassword}>Reset</span> </p>
             </div>
 
             <div>
                 <SocialLogin></SocialLogin>
+                <ToastContainer />
             </div>
+
         </div>
     );
 };
