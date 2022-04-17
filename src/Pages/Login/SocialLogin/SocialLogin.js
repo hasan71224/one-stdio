@@ -1,25 +1,25 @@
 import React from 'react';
 import social1 from '../../../images/social/social1.png'
 import social2 from '../../../images/social/social2.png'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useNavigate } from 'react-router-dom';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser, githubLoading, githubError] = useSignInWithGithub(auth);
     const navigate = useNavigate()
     let errorElement;
-    if (error) {
-        errorElement = 
+    if (error || githubError) {
+        errorElement =
             <div>
-                <p className='text-danger'>Error: {error.message}</p>
+                <p className='text-danger'>Error: {error?.message} {githubError?.message}</p>
             </div>
-        
+
     }
-    if (loading) {
+    if (loading || githubLoading) {
         return <p>Loading...</p>;
     }
-    if (user) {
+    if (user || githubUser) {
         navigate('/')
     }
     return (
@@ -32,7 +32,7 @@ const SocialLogin = () => {
             {errorElement}
             <div className='mb-3'>
                 <button
-                    onClick={()=>signInWithGoogle()}
+                    onClick={() => signInWithGoogle()}
                     className='btn btn-primary w-50 d-block mx-auto'>
                     <img className='me-3' style={{ width: "30px" }} src={social1} alt="" />
                     Google SignIn
@@ -40,7 +40,9 @@ const SocialLogin = () => {
             </div>
 
             <div>
-                <button className='btn btn-primary w-50 d-block mx-auto'>
+                <button
+                    onClick={() => signInWithGithub()}
+                    className='btn btn-primary w-50 d-block mx-auto'>
                     <img className='me-3' style={{ width: "30px" }} src={social2} alt="" />
                     Github SignIn
                 </button>
