@@ -1,33 +1,47 @@
-# Getting Started with Create React App
+# One Studio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+One Studio [https://one-studio-e6f0f.web.app/](https://one-studio-e6f0f.web.app/).
 
-## Available Scripts
+## Live Link
 
-In the project directory, you can run:
+https://one-studio-e6f0f.web.app/
 
-### `npm start`
+### `Home Page`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In Home page have a header/ navigation var. image slider . A service section. use bootstrap and react bootstrap.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Service section`
 
-### `npm test`
+In service section i show one studio services. have 6 services of photography. this services show a card and have this card image, name, description, package price.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Blogs`
 
-### `npm run build`
+In blog page have 3 question ans solve:
+1. What is difference between authentication and Authorisation give two examples each?
+2. Why we use firebase? what other options do you have to implement authentication?
+3. what other services does firebase provide other than authentication? 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `About`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In About page have personal photo,name and goal.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `Register`
+
+In Register page use firebase and have a form for sign up and have some alert . use navigation for navigate another page.
+
+### `login`
+In login page have form use firebase hook for login . and use email password login, github login, google login,
+use toast, alert for password update.
+
+### `technology`
+In this site use:
+1. React
+2. Router
+3. bootstrap
+4. react Bootstrap
+5. firebase
+6. firebase hook
+7. firebase hosting
 
 ### `npm run eject`
 
