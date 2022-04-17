@@ -7,6 +7,17 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
+    
+
+    let errorElement;
+
+    // if (error) {
+    //     errorElement =
+    //         <div>
+    //             <p className='text-danger'>Error: {error?.message}</p>
+    //         </div>
+
+    // }
 
     const navigateRegister = event => {
         navigate('/register')
@@ -35,7 +46,7 @@ const Login = () => {
                         LogIn
                     </Button>
                 </Form>
-
+                {errorElement}
                 <p className='mt-3'>New to One studio? <span className='text-danger' style={{ cursor: "pointer" }} onClick={navigateRegister}>Register</span> </p>
             </div>
 
